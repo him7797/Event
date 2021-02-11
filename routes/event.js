@@ -143,7 +143,7 @@ Router.post('/',upload.any(),async(req,res,next)=>{
 });
 
 
-Router.put('/',async(req,res)=>{
+Router.put('/',upload.any(),async(req,res,next)=>{
     try{
             let eventId=req.body.id;
             let event=await Event.findOne({_id:eventId});
