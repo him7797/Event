@@ -18,7 +18,7 @@ const entityStorage = multer.diskStorage({
 
 
 
-
+//Route to get all the events details
 Router.get('/',async(req,res)=>{
     try{
             let events=await Event.find().sort({updatedAt:-1});
@@ -42,7 +42,7 @@ Router.get('/',async(req,res)=>{
 Router.post('/',upload.any(),async(req,res,next)=>{
     try{
         
-            console.log(req.body.moderators.name);
+            
             let files=req.files;
             let title=req.body.title;
             let link=req.body.link;
@@ -142,7 +142,7 @@ Router.post('/',upload.any(),async(req,res,next)=>{
     
 });
 
-
+//Route to update the event details 
 Router.put('/',upload.any(),async(req,res,next)=>{
     try{
             let eventId=req.body.id;
@@ -255,6 +255,7 @@ Router.put('/',upload.any(),async(req,res,next)=>{
     }
 });
 
+//Route to delete the event with given id
 Router.delete('/',async(req,res,next)=>{
     try{
             let eventId=req.body.id;
