@@ -38,7 +38,7 @@ Router.get('/',async(req,res)=>{
 });
 
 
-//Route for 
+//Route for creating event
 Router.post('/',upload.any(),async(req,res,next)=>{
     try{
         
